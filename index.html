@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ButtonReset</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="app.js"></script>
+    <style>
+        @keyframes slidedown {
+            0%, 100% {
+                height: 0;
+                top: -100%;
+                display: none;
+            }
+            20%, 80% {
+                height: 100vh;
+                top: 0;
+                display: block;
+            }
+        }
+
+        .animation {
+            animation: slidedown 3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="text-gray-900">
+    <div>
+        <h1 class="text-4xl my-10 text-center font-semibold">Button Reset Game</h1>
+    </div>
+    <div class="space-y-4 my-10">
+        <h2 class="text-3xl font-medium text-center">Max: <span id="max_score">0</span></h2>
+        <h2 class="text-2xl font-normal text-center">Clicks: <span id="score">0</span></h2>
+    </div>
+    <div class="mt-10">
+        <button onclick="buttonClick()" class="mx-auto block border py-20 px-14 shadow-xl bg-gray-50 active:shadow-sm transition-all duration-75 lg:active:shadow-sm lg:hover:shadow-md rounded-full text-xl font-bold" id="btn">Click Me</button>
+    </div>
+    <div class="mt-10">
+        <h2 class="text-2xl font bold text-center">What is it?</h2>
+        <p class="text-xl text-center mt-4 px-6">Every time you click the button, the counter goes up. In addition, the button gets a higher chance of resetting. Try reaching the highest score you can!</p>
+    </div>
+
+    <div id="cover" class="absolute bg-red-700 h-0 w-screen top-[-100%] hidden transition-all duration-500">
+        <span class="mx-auto select-none text-center block font-bold text-3xl mt-[40vh]">Button Reset!</span>
+    </div>
+</body>
+</html>
